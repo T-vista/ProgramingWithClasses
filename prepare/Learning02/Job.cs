@@ -4,16 +4,11 @@ public class Job
 {
     public string _jobTitle = "";
     public string _company = "";
-    public string _startDate = "";
-    public string _endDate = "";
-
-    public Job()
-    {  
-    }
+    public int _startDate;
+    public int _endDate;
 
     public void display()
     {
-        Console.WriteLine(_jobTitle);
-        Console.WriteLine(_company);
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startDate}--{_endDate}");
     }
 } 
