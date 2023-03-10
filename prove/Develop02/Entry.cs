@@ -2,20 +2,22 @@ using System;
 
 public class Journal
 {
-    public string _JournalEntry = "";
-    public string _PromptOutput = "";
-    public string _Date = "";
+    public static string _JournalEntry = "";
+    public static string _Prompt = "";
+    public static string _Date = "";
 
-    public void entry()
+    public static void entry()
     {
-        Console.WriteLine($"Date: {Prompts.GetDate()} - Prompt: {Prompts.GetPrompt()}");
+        _Date = Prompts.GetDate();
+        _Prompt = Prompts.GetPrompt();
+         Console.WriteLine($"Date: {_Date} - Prompt: {_Prompt}");
         Console.WriteLine("Enter your response here: ");
         _JournalEntry = Console.ReadLine();
     }
 
-    public void display()
+    public static void display()
     {
-        Console.WriteLine($"Date: {Prompts.GetDate()} - Prompt: {Prompts.GetPrompt()}");
+        Console.WriteLine($"Date: {_Date} - Prompt: {_Prompt}");
         Console.WriteLine(_JournalEntry);
     }
 }
