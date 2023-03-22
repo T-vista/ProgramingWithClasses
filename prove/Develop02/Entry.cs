@@ -5,6 +5,7 @@ public class Journal
     public static string _JournalEntry = "";
     public static string _Prompt = "";
     public static string _Date = "";
+    List<string> _Entries = new List<string>()
 
     public static void entry()
     {
@@ -13,11 +14,12 @@ public class Journal
          Console.WriteLine($"Date: {_Date} - Prompt: {_Prompt}");
         Console.WriteLine("Enter your response here: ");
         _JournalEntry = Console.ReadLine();
+        _Entries.Add($"Date: {_Date} - Prompt: {_Prompt}
+        {_JournalEntry}")
     }
 
     public static void display()
     {
-        Console.WriteLine($"Date: {_Date} - Prompt: {_Prompt}");
-        Console.WriteLine(_JournalEntry);
+        Console.WriteLine(_Entries);
     }
 }
