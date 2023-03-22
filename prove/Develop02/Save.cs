@@ -27,11 +27,8 @@ public class Save
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
             // You can add text to the file with the WriteLine method
-            outputFile.WriteLine($"{Journal._Date}");
-            outputFile.WriteLine($"{Journal._Prompt}");
-            outputFile.WriteLine($"{Journal._JournalEntry}");
-            outputFile.WriteLine(" ");
-                    
+            foreach (string entry in Journal._Entries)
+                outputFile.WriteLine($"{entry}");
         }
     }
 }
