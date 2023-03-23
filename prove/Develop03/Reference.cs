@@ -1,15 +1,30 @@
 using System;
 
-public class reference
+public class Reference
 {
-    public static string _book = "2 Nephi";
+    private static string _book = "";
+    private static string _chapter = "";
+    private static string _verseStart = "";
+    private static string _verseEnd = "";
+    private static string _text = "";
 
-    public static string _chapterVerse = "31:3";
-
-    public static string _verse = "For my soul delighteth in plainness; for after this manner doth the Lord God work among the children of men. For the Lord God giveth light unto the bunderstanding; for he speaketh unto men according to their clanguage, unto their understanding.";
-
-    public void _getscripture()
+    public static void _displayScripture()
     {
-    
+        if (_verseEnd != "")
+        {
+            Console.WriteLine($"{_book} {_chapter}:{_verseStart}-{_verseEnd} {_text}");
+        }
+        else 
+        {
+            Console.WriteLine($"{_book} {_chapter}:{_verseStart} {_text}");
+        }
+    }
+    public static void _setReference(string book, string chapter, string verseStart, string verseEnd, string text)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verseStart = verseStart;
+        _verseEnd = verseEnd;
+        _text = text;
     }
 }
